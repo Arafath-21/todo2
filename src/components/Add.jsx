@@ -5,7 +5,8 @@ function Add({setTodo}) {
     let [description,setDesc] = useState("")
     let addTodo=()=>{
         setTodo((current)=>{
-            let id = current[current.length-1].id?++current[current.length-1]:0
+            let id = current.length > 0 ? ++current[current.length - 1].id : 0;
+            // let id = current[current.length-1].id?++current[current.length-1]:0
             let newArray=[...current]
             newArray.push({
                 id,taskName:task,desc:description,status:true
